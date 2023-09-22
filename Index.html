@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas Eduwork</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --circle-size: clamp(1.5rem, 5vw, 3rem);
+            --spacing: clamp(0.25rem, 2vw, 0.5rem);
+        }
+
+        .c-stepper__item {
+            position: relative;
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 1rem;
+
+            &:before {
+                content: "";
+                flex: 0 0 var(--circle-size);
+                height: var(--circle-size);
+                border-radius: 50%;
+                background-color: #390ef7;
+            }
+
+            &:not(:last-child) {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: calc(var(--circle-size) + var(--spacing));
+                    bottom: var(--spacing);
+                    z-index: -1;
+                    transform: translateX(calc(var(--circle-size) / 2));
+                    width: 2px;
+                    background-color: #390ef7;
+                }
+            }
+        }
+
+        .c-stepper__title {
+            font-weight: bold;
+            font-size: clamp(1rem, 4vw, 1.25rem);
+            margin-bottom: clamp(0.85rem, 1vmax, 1rem);
+        }
+
+        .c-stepper__desc {
+            color: grey;
+            font-size: clamp(0.85rem, 1vmax, 1rem);
+        }
+
+        .c-stepper__content {
+            max-width: 700px;
+        }
+
+        .wrapper {
+            max-width: 1000px;
+            margin: 1rem auto 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            padding: 1rem;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        .navbar-brand {
+            font-size: 40px;
+            font-weight: 400;
+        }
+
+        .navbar-nav {
+            font-size: 25px;
+            font-weight: normal;
+        }
+        p{
+            margin-top: 2px;
+            font-weight: bold;
+        }
+      
+    </style>
+</head>
+
+<body style="margin: 0; background-image: url(bg.png);">
+
+
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark fixed-top">
+        <div class="container">
+            <div>
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="logo" style="width:200px;">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <nav class="nav justify-content-center">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <a class="nav-link  active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Kelas
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                    <a class="nav-link " href="#">Hubungi Admin</a>
+            </nav>
+            <nav class="nav justify-content-end">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Memeber
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </nav>
+        </div>
+        </div>
+    </nav>
+    <div class="container-fluid" style=" background-image: bg; padding: 105px">
+
+        <section id="hero">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="display-3 pt-2 fw-bold">Pelatihan & Penyaluran kerja.</div>
+                    <div class="wrapper">
+                        <ol class="c-stepper">
+                            <li class="c-stepper__item">
+
+                                <div class="c-stepper__content">
+                                    <h3 class="c-stepper__title">Daftar, Get Free Class !</h3>
+                                    <p class="c-stepper__desc" style="line-height: 1.4;">Join komunitas belajar,dapatkan
+                                        Akses kelas & materi gratis </p>
+                                </div>
+                            </li>
+                            <li class="c-stepper__item">
+
+                                <div class="c-stepper__content">
+                                    <h3 class="c-stepper__title">Belar Insentif</h3>
+                                    <p class="c-stepper__desc">Belajar didampingi virtual asistant & mentor expert via
+                                        grup & 1-on-1zoommeeting</p>
+                                </div>
+                            </li>
+                            <li class="c-stepper__item">
+
+                                <div class="c-stepper__content">
+                                    <h3 class="c-stepper__title">Penyaluran Kerja dijamin</h3>
+                                    <p class="c-stepper__desc">dapatkan Pekerjaan dengan gaji s.d 10 jt lebih</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <img src="free.PNG" style="margin-left: 100px;">
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <img src="orang.png" alt="">
+                    <div class="card bg-light text-dark">
+                        <div class="card-body" style="font-weight: bold;">"Sebelumnya saya tidak punya background
+                            IT karena jurusan Kimia, setelah saya belajar
+                            coding di Eduwork, Saya berhasil diterima
+                            kerja di Tokopedia sebagai Programer.”
+                            </div>
+                      </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" style="margin-right: 100px;">Daftar gratis</button>
+                    <button type="button" class="btn btn-warning">Konsultasi dulu</button>
+                </div>
+                <p>75,658 Students & 165 Mentors has joined!</p>
+            </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
